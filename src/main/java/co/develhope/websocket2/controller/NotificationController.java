@@ -27,7 +27,7 @@ public class NotificationController {
     @MessageMapping("/msg")
     @SendTo("/topic/broadcast")
     public MessageDTO sendMessage(ClientMessageDTO client){
-        return new MessageDTO(client.getNomeCliente(), "Attento","Fai i debug");
+        return new MessageDTO(client.getNomeCliente(), client.getClientAlert(), client.getClientMsg());
     }
 
 }
